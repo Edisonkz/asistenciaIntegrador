@@ -22,32 +22,13 @@
         android:id="@+id/ll_indicators"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/btn_siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
         <!-- Los indicadores se añadirán dinámicamente -->
     </LinearLayout>
-
-    <!-- Botón siguiente/saltar -->
-    <Button
-        android:id="@+id/btn_siguiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/btn_frame1"
-        android:minWidth="120dp"
-        android:paddingStart="24dp"
-        android:paddingTop="12dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="12dp"
-        android:text="Siguiente"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Botón saltar (opcional) -->
     <TextView

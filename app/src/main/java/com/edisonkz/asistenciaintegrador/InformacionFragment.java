@@ -44,9 +44,17 @@ public class InformacionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_informacion, container, false);
+        
+        // Seleccionar layout según el tipo de pantalla
+        int layoutId = R.layout.fragment_informacion;
+        if (iconRes == R.drawable.informacion_avatar3) {
+            layoutId = R.layout.fragment_informacion_derecha;
+        }
+        
+        View view = inflater.inflate(layoutId, container, false);
 
         ImageView ivIcon = view.findViewById(R.id.iv_icon);
+        ImageView ivBackground = view.findViewById(R.id.iv_background_oval);
         TextView tvTitle = view.findViewById(R.id.tv_title);
         TextView tvSubtitle = view.findViewById(R.id.tv_subtitle);
 
@@ -54,6 +62,7 @@ public class InformacionFragment extends Fragment {
         if (iconRes != 0) {
             ivIcon.setImageResource(iconRes);
         }
+        
         tvTitle.setText(title);
         tvSubtitle.setText(subtitle);
 

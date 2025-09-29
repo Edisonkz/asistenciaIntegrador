@@ -2,8 +2,9 @@ package com.edisonkz.asistenciaintegrador;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -22,10 +23,10 @@ public class pantalla_de_informacion extends AppCompatActivity {
     private ViewPager2 viewPager2;
     private InformacionPagerAdapter adapter;
     private LinearLayout indicatorsContainer;
-    private Button btnSiguiente;
     private TextView tvSaltar;
     private List<InformacionFragment> fragments;
     private int currentPosition = 0;
+    private Handler autoNavigationHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +49,8 @@ public class pantalla_de_informacion extends AppCompatActivity {
     private void initViews() {
         viewPager2 = findViewById(R.id.viewPager2);
         indicatorsContainer = findViewById(R.id.ll_indicators);
-        btnSiguiente = findViewById(R.id.btn_siguiente);
         tvSaltar = findViewById(R.id.tv_saltar);
+        autoNavigationHandler = new Handler(Looper.getMainLooper());
     }
 
     private void setupViewPager() {
@@ -59,21 +60,21 @@ public class pantalla_de_informacion extends AppCompatActivity {
         fragments.add(InformacionFragment.newInstance(
                 "OLVÍDATE\nDE LAS FILAS",
                 "Registra tu ingreso diario en segundos con\nreconocimiento facial y código QR dinámico",
-                R.drawable.informacion_icon1
+                R.drawable.informacion_avatar1
         ));
         
         // Página 2
         fragments.add(InformacionFragment.newInstance(
                 "PUNTUALIDAD\nSIN ESTRÉS",
                 "Recibe alertas y notificaciones, mantén tu\nasistencia al día, sin papeleo ni errores",
-                R.drawable.informacion_icon2
+                R.drawable.informacion_avatar2
         ));
         
         // Página 3
         fragments.add(InformacionFragment.newInstance(
                 "SEGURIDAD Y\nCONFIANZA",
                 "Tu identidad está protegida con la última\ntecnología en validación biométrica",
-                R.drawable.informacion_icon3
+                R.drawable.informacion_avatar3
         ));
 
         adapter = new InformacionPagerAdapter(this, fragments);
@@ -86,7 +87,16 @@ public class pantalla_de_informacion extends AppCompatActivity {
                 super.onPageSelected(position);
                 currentPosition = position;
                 updateIndicators(position);
-                updateButtonText(position);
+                
+                // Si llegó a la última página, navegar automáticamente después de 2 segundos
+                if (position == fragments.size() - 1) {
+                    autoNavigationHandler.postDelayed(() -> {
+                        finishIntroduction();
+                    }, 2000); // 2 segundos de espera
+                } else {
+                    // Cancelar navegación automática si no está en la última página
+                    autoNavigationHandler.removeCallbacksAndMessages(null);
+                }
             }
         });
     }
@@ -118,31 +128,29 @@ public class pantalla_de_informacion extends AppCompatActivity {
         }
     }
 
-    private void updateButtonText(int position) {
-        if (position == fragments.size() - 1) {
-            btnSiguiente.setText("Comenzar");
-        } else {
-            btnSiguiente.setText("Siguiente");
-        }
-    }
-
     private void setupClickListeners() {
-        btnSiguiente.setOnClickListener(v -> {
-            if (currentPosition < fragments.size() - 1) {
-                viewPager2.setCurrentItem(currentPosition + 1);
-            } else {
-                // Finalizar introducción y ir a la siguiente actividad
-                finishIntroduction();
-            }
-        });
-
+        // Solo mantener el click del botón "Saltar"
         tvSaltar.setOnClickListener(v -> finishIntroduction());
     }
 
     private void finishIntroduction() {
-        // Navegar a la siguiente actividad (por ejemplo, MainActivity)
+        // Cancelar cualquier navegación automática pendiente
+        if (autoNavigationHandler != null) {
+            autoNavigationHandler.removeCallbacksAndMessages(null);
+        }
+        
+        // Navegar a MainActivity
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+    
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Limpiar el handler para evitar memory leaks
+        if (autoNavigationHandler != null) {
+            autoNavigationHandler.removeCallbacksAndMessages(null);
+        }
     }
 }
