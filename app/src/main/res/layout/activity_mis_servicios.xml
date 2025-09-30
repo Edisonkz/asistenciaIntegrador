@@ -41,11 +41,15 @@
         android:id="@+id/card_horario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginTop="32dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_title">
@@ -53,36 +57,66 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
 
+            <!-- Ícono emoji simple -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Horarios"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_marginEnd="16dp"
+                android:text="🕐"
+                android:textSize="28sp" />
 
+            <!-- Contenido de texto -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horarios"
+                    android:textColor="#2D3748"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Descubre tus horarios asignados"
+                    android:textColor="#718096"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Flecha indicativa -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Descubre tus horarios asignados"
-                android:textColor="#666666"
-                android:textSize="14sp" />
+                android:text="▶"
+                android:textColor="#A0AEC0"
+                android:textSize="16sp" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_comunid"
+        android:id="@+id/card_comunicados"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_horario">
@@ -90,61 +124,117 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
 
+            <!-- Ícono emoji simple -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Comunicados"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_marginEnd="16dp"
+                android:text="📢"
+                android:textSize="28sp" />
 
+            <!-- Contenido de texto -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comunicados"
+                    android:textColor="#2D3748"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Visualiza tus alertas y mensajes"
+                    android:textColor="#718096"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Flecha indicativa -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Visualiza tus alertas y mensajes"
-                android:textColor="#666666"
-                android:textSize="14sp" />
+                android:text="▶"
+                android:textColor="#A0AEC0"
+                android:textSize="16sp" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_preg_frec"
+        android:id="@+id/card_preguntas_frecuentes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_comunid">
+        app:layout_constraintTop_toBottomOf="@+id/card_comunicados">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
 
+            <!-- Ícono emoji simple -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Preguntas Frecuentes"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_marginEnd="16dp"
+                android:text="❓"
+                android:textSize="28sp" />
 
+            <!-- Contenido de texto -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Preguntas Frecuentes"
+                    android:textColor="#2D3748"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Resuelve todas tus consultas"
+                    android:textColor="#718096"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Flecha indicativa -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Resuelve todas tus consultas"
-                android:textColor="#666666"
-                android:textSize="14sp" />
+                android:text="▶"
+                android:textColor="#A0AEC0"
+                android:textSize="16sp" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
