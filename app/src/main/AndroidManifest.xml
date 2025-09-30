@@ -62,4 +62,10 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action and
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
