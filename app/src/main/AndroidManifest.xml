@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AsistenciaIntegrador">
         <activity
+            android:name=".pantalla_carga_inicio"
+            android:exported="false" />
+        <activity
             android:name=".pantalla_de_informacion"
             android:exported="false" />
         <activity

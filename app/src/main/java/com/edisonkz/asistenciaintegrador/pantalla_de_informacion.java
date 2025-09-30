@@ -155,8 +155,8 @@ public class pantalla_de_informacion extends AppCompatActivity {
             .alpha(0.0f)
             .setDuration(300)
             .withEndAction(() -> {
-                // Navegar a MainActivity con transición personalizada
-                Intent intent = new Intent(this, MainActivity.class);
+                // Navegar a pantalla_carga_inicio con transición personalizada
+                Intent intent = new Intent(this, pantalla_carga_inicio.class);
                 startActivity(intent);
                 finish();
                 
