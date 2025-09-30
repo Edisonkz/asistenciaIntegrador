@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AsistenciaIntegrador">
         <activity
+            android:name=".pantalla_login_verificar_correo"
+            android:exported="false" />
+        <activity
+            android:name=".pantalla_login_recuperar"
+            android:exported="false" />
+        <activity
+            android:name=".pantalla_login_inicio_sesion"
+            android:exported="false" />
+        <activity
             android:name=".pantalla_carga_inicio"
             android:exported="false" />
         <activity

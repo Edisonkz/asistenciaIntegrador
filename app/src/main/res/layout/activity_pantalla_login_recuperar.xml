@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pantalla_login_recuperar">
+    
+    <!-- Fondo con gradiente -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="900dp"
+            android:paddingTop="60dp"
+            android:paddingBottom="40dp">
+
+        <!-- CardView para ícono del candado -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_icon"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="40dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="70dp"
+            app:cardElevation="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_candado"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:contentDescription="Ícono de candado"
+                android:src="@drawable/icon_candado"
+                android:tint="#3B82F6" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Título principal mejorado -->
+        <TextView
+            android:id="@+id/tv_titulo_principal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.02"
+            android:text="Recuperar Contraseña"
+            android:textColor="#1F2937"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_icon" />
+
+        <!-- Línea decorativa superior -->
+        <View
+            android:id="@+id/line_top_recover"
+            android:layout_width="80dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/decorative_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_principal" />
+
+        <!-- Subtítulo mejorado -->
+        <TextView
+            android:id="@+id/tv_subtitulo_instrucciones"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="Ingrese su dirección de correo electrónico para restablecer su contraseña."
+            android:textColor="#6B7280"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top_recover" />
+
+        <!-- Contenedor del formulario -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_form_recover"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            app:cardBackgroundColor="#FAFBFC"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_subtitulo_instrucciones">
+
+            <!-- Formulario de correo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Campo de correo electrónico -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    app:boxBackgroundColor="#FFFFFF"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="#3B82F6"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#6B7280"
+                    app:startIconDrawable="@drawable/ic_email"
+                    app:startIconTint="#6B7280">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_email_recover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="Correo electrónico"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#1F2937"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botón moderno con CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_btn_continuar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            app:cardBackgroundColor="#3B82F6"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_form_recover">
+
+            <TextView
+                android:id="@+id/btn_continuar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Continuar"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Línea decorativa inferior -->
+        <View
+            android:id="@+id/line_bottom_recover"
+            android:layout_width="60dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/decorative_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_btn_continuar" />
+
+        <!-- Elementos decorativos - círculos -->
+        <View
+            android:id="@+id/decoration_recover_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="120dp"
+            android:alpha="0.5"
+            android:background="@drawable/decorative_circle_green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/decoration_recover_2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="200dp"
+            android:alpha="0.4"
+            android:background="@drawable/decorative_circle_orange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/decoration_recover_3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="120dp"
+            android:alpha="0.3"
+            android:background="@drawable/decorative_circle_green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <View
+            android:id="@+id/decoration_recover_4"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="80dp"
+            android:alpha="0.4"
+            android:background="@drawable/decorative_circle_orange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Texto de ayuda mejorado -->
+        <TextView
+            android:id="@+id/tv_ayuda_soporte"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:lineSpacingExtra="2dp"
+            android:text="¿No recuerdas tu correo empresarial?"
+            android:textColor="#6B7280"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_bottom_recover"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Link de soporte -->
+        <TextView
+            android:id="@+id/tv_link_soporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif-medium"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="soporte@puntualia.com"
+            android:textColor="#3B82F6"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ayuda_soporte" />
+        
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+    </FrameLayout>
+    
+</ScrollView>
