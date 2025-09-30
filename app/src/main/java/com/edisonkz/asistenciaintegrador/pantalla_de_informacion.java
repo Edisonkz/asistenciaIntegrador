@@ -120,11 +120,22 @@ public class pantalla_de_informacion extends AppCompatActivity {
     private void updateIndicators(int position) {
         for (int i = 0; i < indicatorsContainer.getChildCount(); i++) {
             View indicator = indicatorsContainer.getChildAt(i);
+            final int currentIndex = i; // Variable final para usar en lambda
+            
+            // Configurar el fondo inmediatamente
             if (i == position) {
                 indicator.setBackgroundResource(R.drawable.indicator_active);
             } else {
                 indicator.setBackgroundResource(R.drawable.indicator_inactive);
             }
+            
+            // Animación suave para el cambio de indicador
+            indicator.animate()
+                .scaleX(i == position ? 1.2f : 1.0f)
+                .scaleY(i == position ? 1.2f : 1.0f)
+                .alpha(i == position ? 1.0f : 0.6f)
+                .setDuration(200)
+                .start();
         }
     }
 
@@ -139,10 +150,20 @@ public class pantalla_de_informacion extends AppCompatActivity {
             autoNavigationHandler.removeCallbacksAndMessages(null);
         }
         
-        // Navegar a MainActivity
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        // Animación de fade out suave antes de navegar
+        viewPager2.animate()
+            .alpha(0.0f)
+            .setDuration(300)
+            .withEndAction(() -> {
+                // Navegar a MainActivity con transición personalizada
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                
+                // Transición suave entre actividades
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            })
+            .start();
     }
     
     @Override

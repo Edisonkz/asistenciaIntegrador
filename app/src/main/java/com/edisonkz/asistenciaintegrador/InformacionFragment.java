@@ -46,15 +46,14 @@ public class InformacionFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         
         // Seleccionar layout según el tipo de pantalla
-        int layoutId = R.layout.fragment_informacion;
+        int layoutId = R.layout.activity_pantalla_carga_contenedor;
         if (iconRes == R.drawable.informacion_avatar3) {
-            layoutId = R.layout.fragment_informacion_derecha;
+            layoutId = R.layout.activity_pantalla_carga_informacion3;
         }
         
         View view = inflater.inflate(layoutId, container, false);
 
         ImageView ivIcon = view.findViewById(R.id.iv_icon);
-        ImageView ivBackground = view.findViewById(R.id.iv_background_oval);
         TextView tvTitle = view.findViewById(R.id.tv_title);
         TextView tvSubtitle = view.findViewById(R.id.tv_subtitle);
 

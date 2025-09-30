@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
-    android:fitsSystemWindows="true"
+    android:background="#FFFFFF"
     tools:context=".pantalla_de_informacion">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -18,42 +17,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Indicadores de página mejorados -->
+    <!-- Indicadores de página -->
     <LinearLayout
         android:id="@+id/ll_indicators"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:background="@drawable/indicators_background"
-        android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
         <!-- Los indicadores se añadirán dinámicamente -->
     </LinearLayout>
 
-    <!-- Botón saltar mejorado -->
+    <!-- Botón saltar (opcional) -->
     <TextView
         android:id="@+id/tv_saltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/skip_button_background"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp"
         android:text="Saltar"
-        android:textColor="#FFFFFF"
+        android:textColor="#7F8C8D"
         android:textSize="14sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-medium"
-        android:elevation="2dp"
-        android:clickable="true"
-        android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -9,18 +9,22 @@
     <!-- Contenido principal centrado hacia la izquierda -->
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="0dp"
+        android:layout_width="262dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="160dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:lineSpacingExtra="6dp"
-        android:letterSpacing="0.05"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="8dp"
         android:textColor="@color/text_primary"
-        android:textSize="30sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:fontFamily="sans-serif-medium"
+        android:shadowColor="#40000000"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,50 +32,52 @@
 
     <TextView
         android:id="@+id/tv_subtitle"
-        android:layout_width="0dp"
+        android:layout_width="255dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="160dp"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:lineSpacingExtra="10dp"
-        android:letterSpacing="0.02"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="12dp"
         android:textColor="@color/text_secondary"
-        android:textSize="16sp"
-        android:fontFamily="sans-serif"
+        android:textSize="17sp"
+        android:shadowColor="#20000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
         tools:text="Tu identidad está protegida con la última tecnología en validación biométrica" />
 
-    <!-- Círculo de fondo en esquina inferior derecha -->
-    <ImageView
+    <!-- Círculo de fondo generado por código -->
+
+    <!-- Avatar3 en el círculo derecho -->
+    <View
         android:id="@+id/iv_background_oval"
-        android:layout_width="320dp"
-        android:layout_height="320dp"
-        android:layout_marginEnd="-80dp"
-        android:layout_marginBottom="-80dp"
-        android:contentDescription="Fondo decorativo derecho"
-        android:scaleType="centerCrop"
-        android:src="@drawable/informacion_derecha"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_marginEnd="-160dp"
+        android:layout_marginBottom="-160dp"
         android:alpha="0.8"
+        android:background="@drawable/background_circle_right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Avatar3 en el círculo derecho -->
     <ImageView
         android:id="@+id/iv_icon"
-        android:layout_width="280dp"
-        android:layout_height="350dp"
-        android:layout_marginEnd="-40dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="370dp"
+        android:layout_marginEnd="-50dp"
+        android:layout_marginBottom="32dp"
         android:contentDescription="Avatar informativo"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:src="@drawable/informacion_avatar3" />
 
-    <!-- Estrellas decorativas lado izquierdo -->
     <ImageView
         android:id="@+id/iv_estrella"
         android:layout_width="32dp"
