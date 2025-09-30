@@ -2,43 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    
-    <!-- Colores principales del tema - Paleta mejorada -->
-    <color name="primary_blue">#4A90E2</color>
-    <color name="primary_blue_dark">#357ABD</color>
-    <color name="primary_blue_light">#6FA8F5</color>
-    <color name="accent_purple">#6C5CE7</color>
-    <color name="accent_purple_light">#A29BFE</color>
-    <color name="accent_orange">#FF7675</color>
-    <color name="accent_green">#00B894</color>
-    
-    <!-- Colores de texto mejorados -->
-    <color name="text_primary">#2D3436</color>
-    <color name="text_secondary">#636E72</color>
-    <color name="text_tertiary">#B2BEC3</color>
-    <color name="text_on_dark">#FFFFFF</color>
-    <color name="text_on_light">#2D3436</color>
-    
-    <!-- Colores de fondo -->
-    <color name="background_light">#FDFDFD</color>
-    <color name="background_card">#FFFFFF</color>
-    <color name="background_overlay">#F8F9FA</color>
-    <color name="background_gradient_start">#667EEA</color>
-    <color name="background_gradient_end">#764BA2</color>
-    
-    <!-- Colores de estado -->
-    <color name="success_green">#00B894</color>
-    <color name="warning_yellow">#FDCB6E</color>
-    <color name="error_red">#E17055</color>
-    <color name="info_blue">#74B9FF</color>
-    
-    <!-- Colores con transparencia -->
-    <color name="overlay_light">#40FFFFFF</color>
-    <color name="overlay_dark">#60000000</color>
-    <color name="shadow_color">#20000000</color>
-    
-    <!-- Colores para indicadores y elementos interactivos -->
-    <color name="indicator_active">#4A90E2</color>
-    <color name="indicator_inactive">#DDD</color>
-    <color name="ripple_color">#20000000</color>
+
+    <color name="btn_colorblue">#006699</color>
+    <color name="btn_colorgray">#F0F0F0</color>
 </resources>

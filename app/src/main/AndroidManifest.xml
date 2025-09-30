@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AsistenciaIntegrador">
+
+        <!-- Tus actividades -->
         <activity
             android:name=".pantalla_login_verificar_correo"
             android:exported="false" />
@@ -29,6 +31,22 @@
         <activity
             android:name=".mis_servicios"
             android:exported="false" />
+
+        <!-- Actividades de Gerardo -->
+        <activity
+            android:name=".figure_12"
+            android:exported="false" />
+        <activity
+            android:name=".figure_11"
+            android:exported="false" />
+        <activity
+            android:name=".figure_10"
+            android:exported="false" />
+        <activity
+            android:name=".figure_9"
+            android:exported="false" />
+
+        <!-- Comunes -->
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
@@ -37,7 +55,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -45,11 +62,4 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-    </application>
-
-</manifest>
+                <action and
