@@ -16,7 +16,7 @@ public class pantalla_carga extends AppCompatActivity {
     private static final long SPLASH_DELAY = 3000L;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private final Runnable navigateRunnable = () -> {
-        Intent intent = new Intent(pantalla_carga.this, figure_9.class);
+        Intent intent = new Intent(pantalla_carga.this, pantalla_de_informacion.class);
         startActivity(intent);
         finish(); // Evita que se pueda volver con el botón atrás
     };
