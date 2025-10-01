@@ -17,8 +17,13 @@
     <color name="divider_light">#E5E7EB</color>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <!-- Color de fondo para el ícono -->
     <color name="ic_launcher_background">#FFFFFF</color>
+=======
+    <color name="color_fondo">#F4F7FF</color>
+    <color name="azul_boton">#0369A1</color>
+>>>>>>> Stashed changes
 =======
     <color name="color_fondo">#F4F7FF</color>
     <color name="azul_boton">#0369A1</color>

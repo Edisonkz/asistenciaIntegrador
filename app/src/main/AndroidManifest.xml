@@ -11,47 +11,6 @@
         android:theme="@style/Theme.AsistenciaIntegrador" >
         <!-- Tus actividades -->
         <activity
-<<<<<<< Updated upstream
-=======
-            android:name=".pantalla_login_verificar_correo"
-            android:exported="false" />
-        <activity
-            android:name=".pantalla_login_recuperar"
-            android:exported="false" />
-        <activity
-            android:name=".pantalla_login_inicio_sesion"
-            android:exported="false" />
-        <activity
-            android:name=".pantalla_carga_inicio"
-            android:exported="false" />
-        <activity
-            android:name=".pantalla_de_informacion"
-            android:exported="false" />
-        <activity
-            android:name=".mis_servicios"
-            android:exported="false" />
-
-        <!-- Actividades de Gerardo -->
-        <activity
-            android:name=".figure_12"
-            android:exported="false" />
-        <activity
-            android:name=".figure_11"
-            android:exported="false" />
-        <activity
-            android:name=".figure_10"
-            android:exported="false" />
-        <activity
-            android:name=".figure_9"
-            android:exported="false" />
-
-        <!-- Comunes -->
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-
-        <activity
->>>>>>> Stashed changes
             android:name=".pantalla_carga"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar"
@@ -61,7 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -93,11 +51,7 @@
             android:name=".PreguntasFrecuentes"
             android:exported="false" />
     </application>
-<<<<<<< Updated upstream
 
-</manifest>
-=======
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 </manifest>
->>>>>>> Stashed changes
