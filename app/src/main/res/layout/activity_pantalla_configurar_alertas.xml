@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fondo">
+
+    <!-- Header con botón de regreso -->
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:elevation="1dp"
+        android:gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_regresar"
+            android:contentDescription="Regresar"/>
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Configurar Alertas"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- ScrollView para el contenido -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Contenedor principal del formulario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:background="@drawable/bg_container"
+            android:elevation="3dp"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/tvTituloAlerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="12dp"
+                android:text="Título de Alerta"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etTituloAlerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input"
+                android:hint="Ingresa título de alerta"
+                android:textSize="14sp"
+                android:padding="12dp" />
+
+            <!-- Campo: Tipo de Alerta -->
+            <TextView
+                android:id="@+id/tvTipoAlerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:text="Selecciona Tipo de Alerta"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <Spinner
+                android:id="@+id/spinnerTipoAlerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/bg_input"
+                android:padding="12dp" />
+
+            <!-- Campo: Detalle de Alerta -->
+            <TextView
+                android:id="@+id/tvDetalleAlerta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detalle de Alerta"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="12dp"/>
+
+            <EditText
+                android:id="@+id/etDetalleAlerta"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input"
+                android:gravity="top|start"
+                android:hint="Ingrese el detalle de la alerta..."
+                android:padding="12dp"
+                android:textSize="14sp" />
+
+            <!-- Campo: Selecciona Imagen -->
+            <TextView
+                android:id="@+id/tvSeleccionaImagen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecciona Imagen"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="12dp"/>
+
+            <FrameLayout
+                android:id="@+id/frameImagen"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_dashed_box"
+                android:foregroundGravity="center"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="28sp" />
+            </FrameLayout>
+
+            <!-- Selecciona usuarios -->
+            <TextView
+                android:id="@+id/tvSeleccionaUsuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecciona usuarios"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="12dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgUsuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbColaborador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Colaborador Específico"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="14sp"/>
+
+                <RadioButton
+                    android:id="@+id/rbTodos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Todos" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etColaborador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="N° de documento"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input"
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:visibility="gone"/>
+
+            <!-- Botón -->
+            <Button
+                android:id="@+id/btnEnviar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enviar Alerta"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/azul_boton"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

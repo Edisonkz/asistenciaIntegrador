@@ -4,4 +4,9 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Otros atributos -->
+        <item name="colorControlNormal">#D5D7DA</item>
+        <item name="colorControlActivated">#0369A1</item>
+    </style>
 </resources>
