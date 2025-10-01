@@ -1,24 +1,40 @@
 package com.edisonkz.asistenciaintegrador;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class figure_10 extends AppCompatActivity {
+    
+    private Button btnSemana, btnMes, btnCambioTurno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_mis_servicios_horario);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        
+        // Agregar botón de retroceso
+        findViewById(R.id.back_button).setOnClickListener(v -> onBackPressed());
+        
+        // Inicializar botones
+        btnSemana = findViewById(R.id.btn_semana);
+        btnMes = findViewById(R.id.btn_mes);
+        btnCambioTurno = findViewById(R.id.btn_cambio_turno);
+
+        // Click listener para botón de semana
+        btnSemana.setOnClickListener(v -> {
+            btnSemana.setBackgroundResource(R.drawable.btn_rounded_blue);
+            btnSemana.setTextColor(getResources().getColor(android.R.color.white));
+            btnMes.setBackgroundResource(R.drawable.btn_rounded_gray);
+            btnMes.setTextColor(getResources().getColor(android.R.color.darker_gray));
+        });
+
+        // Click listener para botón de mes
+        btnMes.setOnClickListener(v -> {
+            btnMes.setBackgroundResource(R.drawable.btn_rounded_blue);
+            btnMes.setTextColor(getResources().getColor(android.R.color.white));
+            btnSemana.setBackgroundResource(R.drawable.btn_rounded_gray);
+            btnSemana.setTextColor(getResources().getColor(android.R.color.darker_gray));
         });
     }
 }
