@@ -7,6 +7,61 @@
     android:layout_height="match_parent"
     tools:context=".mis_servicios">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="Perfil"
+        android:src="@drawable/profile"
+        tools:layout_editor_absoluteX="353dp"
+        tools:layout_editor_absoluteY="841dp" />
+
+    <LinearLayout
+        android:id="@+id/btn_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Inicio"
+            android:src="@drawable/home" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Inicio"
+            android:textColor="#006699"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Inicio"
+            android:textColor="#006699"
+            android:textSize="12sp" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/header_title"
         android:layout_width="411dp"
@@ -237,6 +292,22 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="Inicio"
+        android:src="@drawable/home"
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="842dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buton con icon de iuna imagen de Qr"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="795dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
