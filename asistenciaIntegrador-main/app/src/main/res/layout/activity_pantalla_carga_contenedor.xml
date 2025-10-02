@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <!-- Contenido principal centrado hacia la derecha -->
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="8dp"
+        android:textColor="@color/text_primary"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:shadowColor="#40000000"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="OLVÍDATE\nDE LAS FILAS" />
+
+    <!-- Óvalo de fondo en esquina inferior izquierda -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="12dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="17sp"
+        android:shadowColor="#20000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="Registra tu ingreso diario en segundos con reconocimiento facial y código QR dinámico" />
+
+    <!-- Círculo de fondo generado por código -->
+    <View
+        android:id="@+id/iv_background_oval"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="-160dp"
+        android:layout_marginBottom="-160dp"
+        android:background="@drawable/background_circle_left"
+        android:alpha="0.8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Ícono principal grande cubriendo el lado izquierdo -->
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="300dp"
+        android:layout_height="370dp"
+        android:layout_marginStart="-50dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="Icono informativo"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@drawable/informacion_avatar1" />
+
+    <!-- Estrella decorativa posicionada estratégicamente -->
+    <ImageView
+        android:id="@+id/iv_estrella"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="Estrella decorativa"
+        android:scaleType="centerInside"
+        android:alpha="0.7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_estrella2" />
+
+    <!-- Segunda estrella más pequeña -->
+    <ImageView
+        android:id="@+id/iv_estrella2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="80dp"
+        android:contentDescription="Estrella decorativa pequeña"
+        android:scaleType="centerInside"
+        android:alpha="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_estrella" />
+
+    <!-- Tercera estrella en la parte superior central -->
+    <ImageView
+        android:id="@+id/iv_estrella3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Estrella decorativa central"
+        android:scaleType="centerInside"
+        android:alpha="0.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_estrella2" />
+
+    <!-- Ícono de calendario decorativo -->
+    <ImageView
+        android:id="@+id/iv_calendario"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="50dp"
+        android:contentDescription="Calendario decorativo"
+        android:scaleType="centerInside"
+        android:alpha="0.6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_calendario" />
+
+    <!-- Estrella adicional en la zona media -->
+    <ImageView
+        android:id="@+id/iv_estrella4"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="100dp"
+        android:contentDescription="Estrella decorativa media"
+        android:scaleType="centerInside"
+        android:alpha="0.3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_estrella" />
+
+    <!-- Círculos decorativos variados -->
+    <View
+        android:id="@+id/circle1"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/decorative_circle"
+        android:alpha="0.6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/circle2"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/decorative_circle"
+        android:alpha="0.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Círculos adicionales con diferentes colores -->
+    <View
+        android:id="@+id/circle3"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="120dp"
+        android:background="@drawable/decorative_circle_orange"
+        android:alpha="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/circle4"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/decorative_circle_green"
+        android:alpha="0.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/circle5"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="120dp"
+        android:background="@drawable/decorative_circle"
+        android:alpha="0.3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/circle6"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/decorative_circle_orange"
+        android:alpha="0.3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Indicadores de página centrados en la parte inferior -->
+    <LinearLayout
+        android:id="@+id/ll_page_indicators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <!-- Los indicadores se añadirán dinámicamente -->
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

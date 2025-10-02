@@ -4,4 +4,14 @@
     <string name="logo_app">Logo de la aplicación</string>
     <string name="loading">Cargando</string>
     <string name="volver">Volver</string>
+    <string name="horarios_titulo">Horarios Asignados</string>
+    <string name="filtrar_por">Filtrar por:</string>
+    <string name="semana">Semana</string>
+    <string name="mes">Mes</string>
+    <string name="lista_horarios">Lista de horarios</string>
+    <string name="solicitar_cambio">Solicitar cambio de turno</string>
+    <string name="sede_san_miguel">Sede: Puntual San Miguel</string>
+    <string name="horario_trabajo">09:00AM - 06:00PM</string>
+    <string name="estado_asignado">Asignado</string>
+    <string name="qr_button_desc">Escanear código QR</string>
 </resources>
