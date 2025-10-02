@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fondo">
+
+    <!-- Header con botón de regreso -->
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:elevation="1dp"
+        android:gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_regresar"
+            android:contentDescription="Regresar"/>
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Asignar Horarios"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Barra de búsqueda -->
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/barra_busqueda"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+        <EditText
+            android:id="@+id/et_busqueda"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Buscar al colaborador por documento"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/icon_lupa"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Buscar"
+            android:padding="12dp"
+            android:src="@drawable/ic_search" />
+    </LinearLayout>
+
+    <!-- ScrollView para el contenido -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/search_container">
+
+        <!-- Contenedor principal del formulario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:background="@drawable/bg_container"
+            android:elevation="3dp"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Tarjeta de usuario -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gb_continainer_gris"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/tvNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="ANDRES GUTIERREZ ALVARADO"
+                    android:textSize="16sp"
+                    android:textColor="@color/texto_fondo_gris_claro" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/tvCargo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TÉCNICO TI"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/texto_fondo_gris_claro" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" | "
+                        android:textSize="14sp"
+                        android:textColor="@color/texto_fondo_gris_claro"
+                        android:layout_marginHorizontal="6dp"/>
+
+                    <TextView
+                        android:id="@+id/tvCodigo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00145744"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/texto_fondo_gris_claro" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecciona los días"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="12dp"/>
+
+            <!-- Checkboxes -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="3"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="12dp">
+
+                <CheckBox
+                    android:id="@+id/cbLunes"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Lunes"
+                    android:textSize="13sp"/>
+
+                <CheckBox
+                    android:id="@+id/cbMartes"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Martes"
+                    android:textSize="13sp"/>
+
+                <CheckBox
+                    android:id="@+id/cbMiercoles"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Miércoles"
+                    android:textSize="13sp"/>
+
+                <CheckBox
+                    android:id="@+id/cbJueves"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Jueves"
+                    android:textSize="13sp"/>
+
+                <CheckBox
+                    android:id="@+id/cbViernes"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Viernes"
+                    android:textSize="13sp"/>
+
+                <CheckBox
+                    android:id="@+id/cbSabado"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Sábado"
+                    android:textSize="13sp"/>
+
+                <CheckBox
+                    android:id="@+id/cbDomingo"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="Domingo"
+                    android:textSize="13sp" />
+            </GridLayout>
+
+        </LinearLayout>
+
+            <!-- Selecciona horario -->
+            <TextView
+                android:id="@+id/tvSeleccionaHorario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecciona Horario"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="12dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgHorario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rbPrimerHorario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="09:00AM - 16:00PM"
+                    android:textSize="14sp"/>
+
+                <RadioButton
+                    android:id="@+id/rbSegundoHorario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="10:00AM - 17:00PM"
+                    android:textSize="14sp"/>
+
+                <RadioButton
+                    android:id="@+id/rbTercerHorario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_check"
+                    android:text="11:00AM - 18:00PM"
+                    android:textSize="14sp"/>
+            </RadioGroup>
+
+            <!-- Botón -->
+            <Button
+                android:id="@+id/btnRegistrarColaborador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asignar Horario"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/azul_boton"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="20dp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

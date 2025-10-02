@@ -22,4 +22,7 @@
 
     <color name="color_fondo">#F4F7FF</color>
     <color name="azul_boton">#0369A1</color>
+    <color name="fondo_gris_claro">#F2F2F2</color>
+    <color name="borde_fondo_gris_claro">#D9D9D9</color>
+    <color name="texto_fondo_gris_claro">#9A9A9A</color>
 </resources>

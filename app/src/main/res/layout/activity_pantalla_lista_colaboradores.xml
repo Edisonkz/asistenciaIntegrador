@@ -9,36 +9,37 @@
     android:background="#F4F7FF"
     tools:context=".activity_pantalla_lista_colaboradores">
 
-    <!-- Header mejorado -->
+    <!-- Header con botón de regreso -->
     <LinearLayout
-        android:id="@+id/header"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:background="@drawable/barra_header"
-        android:gravity="center_vertical"
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:elevation="1dp"
+        android:gravity="start"
         android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageButton
-            android:id="@+id/back_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Volver"
-            android:padding="12dp"
-            android:src="@drawable/ic_left" />
-
-        <TextView
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_margin="14dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_regresar"
+            android:contentDescription="Regresar"/>
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Lista de Colaboradores"
-            android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <!-- Barra de búsqueda mejorada -->
@@ -53,7 +54,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header">
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader">
 
         <EditText
             android:id="@+id/et_busqueda"
