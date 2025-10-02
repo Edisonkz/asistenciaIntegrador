@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">asistenciaIntegrador</string>
+    <string name="background_image">Imagen de fondo</string>
+    <string name="logo_app">Logo de la aplicación</string>
+    <string name="loading">Cargando</string>
+
+</resources>

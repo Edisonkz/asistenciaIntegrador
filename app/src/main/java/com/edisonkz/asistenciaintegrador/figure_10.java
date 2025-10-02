@@ -11,7 +11,7 @@ public class figure_10 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mis_servicios_horario);
+        setContentView(R.layout.activity_mis_servicios_empleado_horario);
         
         // Agregar botón de retroceso
         findViewById(R.id.back_button).setOnClickListener(v -> onBackPressed());

@@ -86,7 +86,7 @@
         android:clipToPadding="false"
         android:paddingHorizontal="16dp"
         android:paddingBottom="80dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        app:layout_constraintBottom_toTopOf="@id/footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_container">
@@ -158,11 +158,14 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="R01010104@puntualia.com"
-                                android:textColor="#666666"
-                                android:textSize="12sp"
+                                android:ellipsize="end"
                                 android:maxLines="1"
-                                android:ellipsize="end" />
+                                android:text="R01010104@puntualia.com"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:id="@+id/codigo"
@@ -170,8 +173,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
                                 android:text="00145744"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:id="@+id/estado"
@@ -258,19 +264,25 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="RO1a10'04@puntualia.com"
-                                android:textColor="#666666"
-                                android:textSize="12sp"
+                                android:ellipsize="end"
                                 android:maxLines="1"
-                                android:ellipsize="end" />
+                                android:text="RO1a10'04@puntualia.com"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
                                 android:text="01010104"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -355,19 +367,25 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="mario.pablo@puntualia.com"
-                                android:textColor="#666666"
-                                android:textSize="12sp"
+                                android:ellipsize="end"
                                 android:maxLines="1"
-                                android:ellipsize="end" />
+                                android:text="mario.pablo@puntualia.com"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
                                 android:text="32145645"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -452,19 +470,25 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Risa24SS@puntual.com"
-                                android:textColor="#666666"
-                                android:textSize="12sp"
+                                android:ellipsize="end"
                                 android:maxLines="1"
-                                android:ellipsize="end" />
+                                android:text="Risa24SS@puntual.com"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
                                 android:text="15722458"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -549,19 +573,25 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="kevin.flores@puntualia.com"
-                                android:textColor="#666666"
-                                android:textSize="12sp"
+                                android:ellipsize="end"
                                 android:maxLines="1"
-                                android:ellipsize="end" />
+                                android:text="kevin.flores@puntualia.com"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
                                 android:text="23474547"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -646,19 +676,25 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="george.farfan@puntualia.com"
-                                android:textColor="#666666"
-                                android:textSize="12sp"
+                                android:ellipsize="end"
                                 android:maxLines="1"
-                                android:ellipsize="end" />
+                                android:text="george.farfan@puntualia.com"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
                                 android:text="34567890"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:background="@drawable/contenedor_background_plomo"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -704,75 +740,13 @@
         app:tint="@android:color/white" />
 
     <!-- Footer -->
-    <LinearLayout
-        android:id="@+id/bottom_bar"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:background="@drawable/drown_btns"
-        android:elevation="8dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
+    <include
+        android:id="@+id/footer"
+        layout="@layout/layout_footer_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:id="@+id/btn_home"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/home"
-                android:contentDescription="Inicio" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Inicio"
-                android:textColor="#006699"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <LinearLayout
-            android:id="@+id/btn_perfil"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/profile"
-                android:contentDescription="Perfil" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Perfil"
-                android:textColor="#A0A0A0"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
