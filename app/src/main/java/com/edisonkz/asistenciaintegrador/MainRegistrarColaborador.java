@@ -56,7 +56,7 @@ public class MainRegistrarColaborador extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_registrar_colaborador);
+        setContentView(R.layout.activity_pantalla_administrador_agregar_colaborador);
 
         initViews();
         setupSpinners();
@@ -77,7 +77,7 @@ public class MainRegistrarColaborador extends AppCompatActivity {
         frameImagen3 = findViewById(R.id.frameImagen3);
         frameImagen4 = findViewById(R.id.frameImagen4);
         frameImagen5 = findViewById(R.id.frameImagen5);
-        btnEnviar = findViewById(R.id.btnEnviar);
+        btnEnviar = findViewById(R.id.btnRegistrarColaborador);
     }
 
     private void setupSpinners() {
@@ -202,12 +202,8 @@ public class MainRegistrarColaborador extends AppCompatActivity {
             return;
         }
 
-        // Aquí implementas la lógica para registrar el colaborador
-        // Puedes usar las imágenes de imagenesSeleccionadas[] para subir las fotos
-
         Toast.makeText(this, "Colaborador registrado exitosamente", Toast.LENGTH_LONG).show();
 
-        // Opcional: Limpiar campos o cerrar activity
         limpiarCampos();
         // finish();
     }
@@ -225,7 +221,5 @@ public class MainRegistrarColaborador extends AppCompatActivity {
         for (int i = 0; i < imagenesSeleccionadas.length; i++) {
             imagenesSeleccionadas[i] = null;
         }
-
-        Toast.makeText(this, "Campos limpiados", Toast.LENGTH_SHORT).show();
     }
 }

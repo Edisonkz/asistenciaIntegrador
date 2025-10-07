@@ -50,7 +50,7 @@ public class MainConfigurarAlertas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_configurar_alertas);
+        setContentView(R.layout.activity_pantalla_administrador_configurar_alertas);
 
         initViews();
         setupSpinner();
