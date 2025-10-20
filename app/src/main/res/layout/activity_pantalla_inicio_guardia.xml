@@ -230,7 +230,7 @@
                 <ImageView
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:src="@drawable/icon_alert_guardia"/>
+                    android:src="@drawable/icon_alerta_guardia"/>
             </FrameLayout>
 
             <LinearLayout
