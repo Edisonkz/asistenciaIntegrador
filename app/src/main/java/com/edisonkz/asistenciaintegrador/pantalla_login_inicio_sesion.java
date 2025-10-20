@@ -1,35 +1,36 @@
 package com.edisonkz.asistenciaintegrador;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.edisonkz.asistenciaintegrador.api.ApiServiceUser;
+import com.edisonkz.asistenciaintegrador.model.Usuario;
 
 public class pantalla_login_inicio_sesion extends AppCompatActivity {
 
     private TextInputEditText etDocumento, etPassword;
     private TextView tvOlvidePassword, btnLogin;
-
-    // Credenciales predefinidas para los 3 roles (DNI/Contraseña)
-    private static final String ADMIN_DNI = "12345678";
-    private static final String ADMIN_PASS = "123";
-    private static final String EMPLEADO_DNI = "87654321";
-    private static final String EMPLEADO_PASS = "123";
-    private static final String GUARDIA_DNI = "11223344";
-    private static final String GUARDIA_PASS = "123";
+    private ApiServiceUser apiService;
+    private ProgressDialog progressDialog;
+    private SwitchMaterial swModeLocal; // nuevo: switch para modo local
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_login_inicio_sesion);
 
-        // Inicializar vistas
+        // Inicializar vistas y servicios
         initViews();
-        
-        // Configurar listeners
+        apiService = new ApiServiceUser();
+        setupProgressDialog();
         setupListeners();
     }
 
@@ -38,6 +39,14 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
         etPassword = findViewById(R.id.et_password);
         tvOlvidePassword = findViewById(R.id.tv_olvide_password);
         btnLogin = findViewById(R.id.btn_iniciar_sesion);
+        swModeLocal = findViewById(R.id.sw_mode_local); // inicializar switch
+    }
+
+    private void setupProgressDialog() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Iniciando sesión");
+        progressDialog.setMessage("Verificando credenciales...");
+        progressDialog.setCancelable(false);
     }
 
     private void setupListeners() {
@@ -53,7 +62,6 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
         tvOlvidePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navegar a la pantalla de recuperar contraseña
                 Intent intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_login_recuperar.class);
                 startActivity(intent);
             }
@@ -77,52 +85,127 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
             return;
         }
 
-        // Validar credenciales y redirigir según el rol
-        if (validateCredentials(dni, password)) {
-            redirectUserByRole(dni);
+        // Si está activado el modo local, autenticar localmente (sin tocar la BD)
+        if (swModeLocal != null && swModeLocal.isChecked()) {
+            progressDialog.show();
+            // Simular pequeña demora y validar credenciales de prueba
+            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                progressDialog.dismiss();
+                authenticateLocally(dni, password);
+            }, 800);
+            return;
+        }
+
+        // Mostrar progress dialog y Llamar a la API del backend con DNI
+        progressDialog.show();
+        apiService.login(dni, password, new ApiServiceUser.LoginCallback() {
+            @Override
+            public void onSuccess(Usuario usuario) {
+                runOnUiThread(() -> {
+                    progressDialog.dismiss();
+                    handleLoginSuccess(usuario);
+                });
+            }
+
+            @Override
+            public void onError(String error) {
+                runOnUiThread(() -> {
+                    progressDialog.dismiss();
+                    Toast.makeText(pantalla_login_inicio_sesion.this, 
+                                 "Error: " + error, Toast.LENGTH_LONG).show();
+                    etPassword.setText("");
+                    etPassword.requestFocus();
+                });
+            }
+        });
+    }
+
+    // Nuevo: autenticación local de prueba (tres usuarios hardcodeados)
+    private void authenticateLocally(String dni, String password) {
+        // Credenciales de prueba (DNI, contraseña NUMÉRICA)
+        // Empleado:      dni "12345678", password "1234"
+        // Guardia:       dni "22222222", password "2222"
+        // Administrador: dni "87654321", password "9999"
+
+        if (dni.equals("12345678") && password.equals("1234")) {
+            // Empleado de prueba
+            Usuario usuario = new Usuario(
+                    "local_emp_1",
+                    "Juan",
+                    "Pérez",
+                    "juan.local@local.test",
+                    "empleado",
+                    "Operario",
+                    dni,
+                    "999000111"
+            );
+            handleLoginSuccess(usuario);
+        } else if (dni.equals("22222222") && password.equals("2222")) {
+            // Guardia de prueba
+            Usuario usuario = new Usuario(
+                    "local_guar_1",
+                    "María",
+                    "Gómez",
+                    "maria.local@local.test",
+                    "guardia",
+                    "Vigilante",
+                    dni,
+                    "999000222"
+            );
+            handleLoginSuccess(usuario);
+        } else if (dni.equals("87654321") && password.equals("9999")) {
+            // Administrador de prueba
+            Usuario usuario = new Usuario(
+                    "local_admin_1",
+                    "Admin",
+                    "Local",
+                    "admin.local@local.test",
+                    "administrador",
+                    "Administrador",
+                    dni,
+                    "999000333"
+            );
+            handleLoginSuccess(usuario);
         } else {
-            Toast.makeText(this, "DNI o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-            // Limpiar campos
+            Toast.makeText(this, "Credenciales inválidas en modo local", Toast.LENGTH_LONG).show();
             etPassword.setText("");
             etPassword.requestFocus();
         }
     }
 
-    private boolean validateCredentials(String dni, String password) {
-        return (ADMIN_DNI.equals(dni) && ADMIN_PASS.equals(password)) ||
-               (EMPLEADO_DNI.equals(dni) && EMPLEADO_PASS.equals(password)) ||
-               (GUARDIA_DNI.equals(dni) && GUARDIA_PASS.equals(password));
-    }
-
-    private void redirectUserByRole(String dni) {
+    private void handleLoginSuccess(Usuario usuario) {
         Intent intent;
-        String mensaje = "";
+        String mensaje = "Bienvenido " + usuario.getNombre();
 
-        switch (dni) {
-            case ADMIN_DNI:
-                // Admin va a MainActivity2 (pantalla admin)
-                intent = new Intent(pantalla_login_inicio_sesion.this, MainActivity2.class);
-                mensaje = "Bienvenido Administrador";
+        // Redirigir según el rol del usuario desde el backend
+        switch (usuario.getRol().toLowerCase()) {
+            case "admin":
+            case "administrador":
+                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_administrador_mis_servicios.class);
                 break;
                 
-            case EMPLEADO_DNI:
-                // Empleado va a Mis servicios
+            case "empleado":
                 intent = new Intent(pantalla_login_inicio_sesion.this, mis_servicios.class);
-                mensaje = "Bienvenido Empleado";
                 break;
                 
-            case GUARDIA_DNI:
-                // Guardia va a MainActivity2 (pantalla guardia)
+            case "guardia":
                 intent = new Intent(pantalla_login_inicio_sesion.this, MainActivity2.class);
-                mensaje = "Bienvenido Guardia";
                 break;
                 
             default:
-                return;
+                intent = new Intent(pantalla_login_inicio_sesion.this, mis_servicios.class);
+                break;
         }
+
+        // Pasar datos del usuario a la siguiente actividad
+        intent.putExtra("usuario_id", usuario.getId());
+        intent.putExtra("usuario_nombre", usuario.getNombre());
+        intent.putExtra("usuario_email", usuario.getEmail());
+        intent.putExtra("usuario_rol", usuario.getRol());
+        intent.putExtra("usuario_cargo", usuario.getCargo());
 
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
         startActivity(intent);
-        finish(); // Cerrar pantalla de login
+        finish();
     }
 }
