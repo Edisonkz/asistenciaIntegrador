@@ -11,14 +11,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.switchmaterial.SwitchMaterial;
-import com.edisonkz.asistenciaintegrador.api.ApiServiceUser;
+import com.edisonkz.asistenciaintegrador.api.ApiServiceUserLogin;
 import com.edisonkz.asistenciaintegrador.model.Usuario;
 
 public class pantalla_login_inicio_sesion extends AppCompatActivity {
 
     private TextInputEditText etDocumento, etPassword;
     private TextView tvOlvidePassword, btnLogin;
-    private ApiServiceUser apiService;
+    private ApiServiceUserLogin apiService;
     private ProgressDialog progressDialog;
     private SwitchMaterial swModeLocal; // nuevo: switch para modo local
 
@@ -29,7 +29,7 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
 
         // Inicializar vistas y servicios
         initViews();
-        apiService = new ApiServiceUser();
+        apiService = new ApiServiceUserLogin();
         setupProgressDialog();
         setupListeners();
     }
@@ -98,7 +98,7 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
 
         // Mostrar progress dialog y Llamar a la API del backend con DNI
         progressDialog.show();
-        apiService.login(dni, password, new ApiServiceUser.LoginCallback() {
+        apiService.login(dni, password, new ApiServiceUserLogin.LoginCallback() {
             @Override
             public void onSuccess(Usuario usuario) {
                 runOnUiThread(() -> {
@@ -185,15 +185,15 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
                 break;
                 
             case "empleado":
-                intent = new Intent(pantalla_login_inicio_sesion.this, mis_servicios.class);
+                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_empleado_mis_servicios.class);
                 break;
                 
             case "guardia":
-                intent = new Intent(pantalla_login_inicio_sesion.this, MainActivity2.class);
+                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_guardia_inicio_temporal.class);
                 break;
                 
             default:
-                intent = new Intent(pantalla_login_inicio_sesion.this, mis_servicios.class);
+                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_empleado_mis_servicios.class);
                 break;
         }
 

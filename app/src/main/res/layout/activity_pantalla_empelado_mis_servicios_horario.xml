@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F7FF"
-    tools:context=".figure_10">
+    tools:context=".pantalla_empelado_mis_servicios_horario">
 
     <!--header-->
     <LinearLayout

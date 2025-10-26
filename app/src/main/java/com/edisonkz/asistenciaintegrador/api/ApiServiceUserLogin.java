@@ -10,14 +10,17 @@ import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ApiServiceUser {
+public class ApiServiceUserLogin {
+
     // URL actualizada según el backend
-    private static final String BASE_URL = "http://192.168.0.100:8080/"; 
-    
+    private static final String BASE_URL = "http://192.168.0.101:8080/";
+
     private ExecutorService executor = Executors.newFixedThreadPool(3);
 
     public interface LoginCallback {
+
         void onSuccess(Usuario usuario);
+
         void onError(String error);
     }
 
@@ -27,20 +30,20 @@ public class ApiServiceUser {
                 // Usar el nuevo endpoint login-android
                 String urlString = BASE_URL + "api/usuarios/login-android?dni=" + dni + "&password=" + password;
                 Log.d("ApiService", "Connecting to: " + urlString);
-                
+
                 URL url = new URL(urlString);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
                 connection.setConnectTimeout(15000); // Aumentar timeout
                 connection.setReadTimeout(15000);
-                
+
                 Log.d("ApiService", "Attempting connection...");
-                
+
                 // Leer respuesta
                 int responseCode = connection.getResponseCode();
                 Log.d("ApiService", "Response code: " + responseCode);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                
+
                 StringBuilder response = new StringBuilder();
                 String line;
                 while ((line = reader.readLine()) != null) {

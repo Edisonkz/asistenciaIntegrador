@@ -1,0 +1,57 @@
+-- Tabla actualizada para gestión de QR único y validación
+
+CREATE TABLE IF NOT EXISTS public.sistema (
+    id_sistema serial PRIMARY KEY,
+    id_usuario integer NOT NULL,
+    qr_token character varying(128) NOT NULL UNIQUE, -- antes rol_qr, ahora nombre más claro y único
+    geolocalizacion character varying(100),
+    fecha_registro timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    horario_inicio timestamp without time zone,
+    horario_fin timestamp without time zone,
+    alerta_generada boolean DEFAULT false,
+    imagen_usuario character varying(255),
+    qr_estado character varying(20) DEFAULT 'activo', -- antes validacion_qr, ahora puede ser 'activo', 'usado', 'expirado'
+    CONSTRAINT sistema_id_usuario_fkey FOREIGN KEY (id_usuario)
+        REFERENCES public.usuario (id_usuario) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
+
+-- Función para registrar una asistencia en la tabla sistema,
+-- extrayendo la imagen_usuario desde la tabla usuario según el id_usuario.
+
+CREATE OR REPLACE FUNCTION registrar_asistencia(
+    p_id_usuario integer,
+    p_qr_token character varying,
+    p_geolocalizacion character varying,
+    p_horario_inicio timestamp without time zone,
+    p_horario_fin timestamp without time zone
+)
+RETURNS void AS $$
+BEGIN
+    INSERT INTO public.sistema (
+        id_usuario,
+        qr_token,
+        geolocalizacion,
+        horario_inicio,
+        horario_fin,
+        imagen_usuario
+    )
+    SELECT
+        p_id_usuario,
+        p_qr_token,
+        p_geolocalizacion,
+        p_horario_inicio,
+        p_horario_fin,
+        u.imagen_usuario
+    FROM public.usuario u
+    WHERE u.id_usuario = p_id_usuario;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Consulta ejemplo:
+-- SELECT id_sistema, id_usuario, qr_token, geolocalizacion, fecha_registro, horario_inicio, horario_fin, alerta_generada, imagen_usuario, qr_estado
+--   FROM public.sistema;
+
+-- Uso:
+-- SELECT registrar_asistencia(1, 'token_unico', 'geo', '2024-06-01 08:00', '2024-06-01 17:00');
