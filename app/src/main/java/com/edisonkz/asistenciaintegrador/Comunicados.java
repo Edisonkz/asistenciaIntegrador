@@ -8,5 +8,7 @@ public class Comunicados extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_servicios_empleado_comunicados);
+
+        findViewById(R.id.back_button).setOnClickListener(v -> onBackPressed());
     }
 }
