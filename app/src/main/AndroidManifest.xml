@@ -53,16 +53,7 @@
             android:name=".mis_servicios"
             android:exported="false" />
         <activity
-            android:name=".figure_12"
-            android:exported="false" />
-        <activity
-            android:name=".figure_11"
-            android:exported="false" />
-        <activity
             android:name=".figure_10"
-            android:exported="false" />
-        <activity
-            android:name=".figure_9"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
