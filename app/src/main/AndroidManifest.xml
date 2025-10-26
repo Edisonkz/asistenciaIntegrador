@@ -90,6 +90,10 @@
         <activity
             android:name=".MainConfigurarAlertas"
             android:exported="false" />
+        <activity
+            android:name=".pantalla_mi_perfil" />
+        <activity
+            android:name=".pantalla_qr_generado" />
     </application>
 
 </manifest>
