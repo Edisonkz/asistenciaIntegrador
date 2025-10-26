@@ -4,14 +4,14 @@ import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class figure_10 extends AppCompatActivity {
+public class pantalla_empelado_mis_servicios_horario extends AppCompatActivity {
     
     private Button btnSemana, btnMes, btnCambioTurno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mis_servicios_empleado_horario);
+        setContentView(R.layout.activity_pantalla_empelado_mis_servicios_horario);
         
         // Agregar botón de retroceso
         findViewById(R.id.back_button).setOnClickListener(v -> onBackPressed());

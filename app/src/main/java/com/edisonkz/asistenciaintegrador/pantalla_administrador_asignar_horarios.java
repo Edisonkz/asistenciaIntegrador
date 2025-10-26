@@ -11,7 +11,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class activity_pantalla_administrador_asignar_horarios extends AppCompatActivity {
+public class pantalla_administrador_asignar_horarios extends AppCompatActivity {
     private ImageButton btnBack;
 
     private Uri imagenSeleccionadaUri;

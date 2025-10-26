@@ -185,15 +185,15 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
                 break;
                 
             case "empleado":
-                intent = new Intent(pantalla_login_inicio_sesion.this, mis_servicios.class);
+                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_empleado_mis_servicios.class);
                 break;
                 
             case "guardia":
-                intent = new Intent(pantalla_login_inicio_sesion.this, MainActivity2.class);
+                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_guardia_inicio_temporal.class);
                 break;
                 
             default:
-                intent = new Intent(pantalla_login_inicio_sesion.this, mis_servicios.class);
+                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_empleado_mis_servicios.class);
                 break;
         }
 
