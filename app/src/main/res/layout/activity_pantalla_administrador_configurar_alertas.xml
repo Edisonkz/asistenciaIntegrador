@@ -35,7 +35,8 @@
             android:layout_marginTop="12dp"
             android:text="Configurar Alertas"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000000" />
 
     </LinearLayout>
 
@@ -67,7 +68,8 @@
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="12dp"
                 android:text="Título de Alerta"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="#000000" />
 
             <EditText
                 android:id="@+id/etTituloAlerta"
@@ -78,7 +80,8 @@
                 android:background="@drawable/bg_input"
                 android:hint="Ingresa título de alerta"
                 android:textSize="14sp"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#636363" />
 
             <!-- Campo: Tipo de Alerta -->
             <TextView
@@ -88,7 +91,8 @@
                 android:layout_marginHorizontal="12dp"
                 android:text="Selecciona Tipo de Alerta"
                 android:textSize="16sp"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp"
+                android:textColor="#000000" />
 
             <Spinner
                 android:id="@+id/spinnerTipoAlerta"
@@ -98,7 +102,8 @@
                 android:layout_marginTop="8dp"
                 android:spinnerMode="dropdown"
                 android:background="@drawable/bg_input"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#636363" />
 
             <!-- Campo: Detalle de Alerta -->
             <TextView
@@ -108,7 +113,8 @@
                 android:text="Detalle de Alerta"
                 android:textSize="16sp"
                 android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="12dp"/>
+                android:layout_marginHorizontal="12dp"
+                android:textColor="#000000"/>
 
             <EditText
                 android:id="@+id/etDetalleAlerta"
@@ -120,7 +126,8 @@
                 android:gravity="top|start"
                 android:hint="Ingrese el detalle de la alerta..."
                 android:padding="12dp"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textColor="#636363" />
 
             <!-- Campo: Selecciona Imagen -->
             <TextView
@@ -130,7 +137,8 @@
                 android:text="Selecciona Imagen"
                 android:textSize="16sp"
                 android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="12dp"/>
+                android:layout_marginHorizontal="12dp"
+                android:textColor="#000000"/>
 
             <FrameLayout
                 android:id="@+id/frameImagen"
@@ -160,7 +168,8 @@
                 android:text="Selecciona usuarios"
                 android:textSize="16sp"
                 android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="12dp"/>
+                android:layout_marginHorizontal="12dp"
+                android:textColor="#000000"/>
 
             <RadioGroup
                 android:id="@+id/rgUsuarios"
@@ -176,14 +185,16 @@
                     android:buttonTint="@color/blue_check"
                     android:text="Colaborador Específico"
                     android:layout_marginEnd="20dp"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp"
+                    android:textColor="#000"/>
 
                 <RadioButton
                     android:id="@+id/rbTodos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/blue_check"
-                    android:text="Todos" />
+                    android:text="Todos"
+                    android:textColor="#000" />
             </RadioGroup>
 
             <EditText

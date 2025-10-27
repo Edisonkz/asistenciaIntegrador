@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F7FF"
-    tools:context=".activity_pantalla_lista_colaboradores">
+    tools:context=".pantalla_administrador_lista_colaboradores">
 
     <!-- Header con botón de regreso -->
     <LinearLayout
@@ -35,6 +35,7 @@
             android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:layout_marginTop="12dp"
             android:text="Lista de Colaboradores"
             android:textSize="16sp"
@@ -62,6 +63,7 @@
             android:layout_height="48dp"
             android:layout_weight="1"
             android:background="@null"
+            android:textColor="#636363"
             android:hint="Buscar por nombre de empleado"
             android:importantForAutofill="no"
             android:inputType="text"
@@ -103,19 +105,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="2dp">
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:id="@+id/iniciales"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:background="@drawable/bg_circle_purple"
+                        android:background="@drawable/bg_circle_blue"
                         android:gravity="center"
                         android:text="AG"
                         android:textAllCaps="true"
@@ -136,6 +140,7 @@
                             android:layout_height="wrap_content"
                             android:text="Andres Gutierrez Alvarado"
                             android:textSize="16sp"
+                            android:textColor="#1F2937"
                             android:textStyle="bold" />
 
                         <TextView
@@ -162,7 +167,7 @@
                                 android:ellipsize="end"
                                 android:maxLines="1"
                                 android:text="R01010104@puntualia.com"
-                                android:textColor="#FFFFFF"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -172,9 +177,9 @@
                                 android:id="@+id/codigo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:text="00145744"
-                                android:textColor="#FFFFFF"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -184,7 +189,7 @@
                                 android:id="@+id/estado"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@drawable/contenedor_background_verde"
                                 android:paddingHorizontal="8dp"
                                 android:paddingVertical="2dp"
@@ -193,15 +198,23 @@
                                 android:textSize="12sp" />
 
                             <ImageButton
-                                android:id="@+id/btn_eliminar"
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_marginStart="12dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:padding="2dp"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/icon_tacho"
-                                app:tint="#FF3B30" />
+                                android:src="@drawable/icon_eliminar_user"/>
+
+                            <ImageButton
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="2dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_actualizar"
+                                />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -213,18 +226,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="2dp">
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:background="@drawable/bg_circle_purple"
+                        android:background="@drawable/bg_circle_blue"
                         android:gravity="center"
                         android:text="RF"
                         android:textAllCaps="true"
@@ -244,7 +259,8 @@
                             android:layout_height="wrap_content"
                             android:text="Ricardo Flores Angulo"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="#1F2937"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -267,8 +283,8 @@
                                 android:layout_weight="1"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="RO1a10'04@puntualia.com"
-                                android:textColor="#FFFFFF"
+                                android:text="R01010104@puntualia.com"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -277,9 +293,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:text="01010104"
-                                android:textColor="#FFFFFF"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -288,7 +304,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@drawable/contenedor_background_verde"
                                 android:paddingHorizontal="8dp"
                                 android:paddingVertical="2dp"
@@ -297,14 +313,23 @@
                                 android:textSize="12sp" />
 
                             <ImageButton
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_marginStart="12dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:padding="2dp"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/icon_tacho"
-                                app:tint="#FF3B30" />
+                                android:src="@drawable/icon_eliminar_user"/>
+
+                            <ImageButton
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="2dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_actualizar"
+                                />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -316,18 +341,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="2dp">
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:background="@drawable/bg_circle_purple"
+                        android:background="@drawable/bg_circle_blue"
                         android:gravity="center"
                         android:text="MP"
                         android:textAllCaps="true"
@@ -347,7 +374,8 @@
                             android:layout_height="wrap_content"
                             android:text="Mario Pablo Huaman Gonzales"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="#1F2937" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -370,8 +398,8 @@
                                 android:layout_weight="1"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="mario.pablo@puntualia.com"
-                                android:textColor="#FFFFFF"
+                                android:text="R32145645@puntualia.com"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -380,9 +408,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:text="32145645"
-                                android:textColor="#FFFFFF"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -391,7 +419,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@drawable/contenedor_background_verde"
                                 android:paddingHorizontal="8dp"
                                 android:paddingVertical="2dp"
@@ -400,14 +428,23 @@
                                 android:textSize="12sp" />
 
                             <ImageButton
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_marginStart="12dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:padding="2dp"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/icon_tacho"
-                                app:tint="#FF3B30" />
+                                android:src="@drawable/icon_eliminar_user"/>
+
+                            <ImageButton
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="2dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_actualizar"
+                                />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -419,18 +456,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="2dp">
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:background="@drawable/bg_circle_purple"
+                        android:background="@drawable/bg_circle_blue"
                         android:gravity="center"
                         android:text="AC"
                         android:textAllCaps="true"
@@ -450,7 +489,8 @@
                             android:layout_height="wrap_content"
                             android:text="Andrea Campos Vidaurre"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="#1F2937" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -473,8 +513,8 @@
                                 android:layout_weight="1"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="Risa24SS@puntual.com"
-                                android:textColor="#FFFFFF"
+                                android:text="R15722458@puntual.com"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -483,9 +523,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:text="15722458"
-                                android:textColor="#FFFFFF"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -494,7 +534,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@drawable/contenedor_background_verde"
                                 android:paddingHorizontal="8dp"
                                 android:paddingVertical="2dp"
@@ -503,14 +543,23 @@
                                 android:textSize="12sp" />
 
                             <ImageButton
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_marginStart="12dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:padding="2dp"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/icon_tacho"
-                                app:tint="#FF3B30" />
+                                android:src="@drawable/icon_eliminar_user"/>
+
+                            <ImageButton
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="2dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_actualizar"
+                                />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -522,18 +571,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="2dp">
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:background="@drawable/bg_circle_purple"
+                        android:background="@drawable/bg_circle_blue"
                         android:gravity="center"
                         android:text="KF"
                         android:textAllCaps="true"
@@ -553,7 +604,8 @@
                             android:layout_height="wrap_content"
                             android:text="Kevin Flores Valdiviezo"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="#1F2937" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -576,8 +628,8 @@
                                 android:layout_weight="1"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="kevin.flores@puntualia.com"
-                                android:textColor="#FFFFFF"
+                                android:text="R23474547@puntualia.com"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -586,9 +638,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:text="23474547"
-                                android:textColor="#FFFFFF"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -597,7 +649,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@drawable/contenedor_background_verde"
                                 android:paddingHorizontal="8dp"
                                 android:paddingVertical="2dp"
@@ -606,14 +658,23 @@
                                 android:textSize="12sp" />
 
                             <ImageButton
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_marginStart="12dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:padding="2dp"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/icon_tacho"
-                                app:tint="#FF3B30" />
+                                android:src="@drawable/icon_eliminar_user"/>
+
+                            <ImageButton
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="2dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_actualizar"
+                                />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -625,18 +686,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="2dp">
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:background="@drawable/bg_circle_purple"
+                        android:background="@drawable/bg_circle_blue"
                         android:gravity="center"
                         android:text="GF"
                         android:textAllCaps="true"
@@ -655,6 +718,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="George Farfan Gamboa"
+                            android:textColor="#1F2937"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -679,8 +743,8 @@
                                 android:layout_weight="1"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="george.farfan@puntualia.com"
-                                android:textColor="#FFFFFF"
+                                android:text="R34567890@puntualia.com"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -689,9 +753,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:text="34567890"
-                                android:textColor="#FFFFFF"
+                                android:textColor="#5B5B5B"
                                 android:textSize="12sp"
                                 android:background="@drawable/contenedor_background_plomo"
                                 android:paddingHorizontal="8dp"
@@ -700,7 +764,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@drawable/contenedor_background_verde"
                                 android:paddingHorizontal="8dp"
                                 android:paddingVertical="2dp"
@@ -709,14 +773,23 @@
                                 android:textSize="12sp" />
 
                             <ImageButton
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_marginStart="12dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:padding="2dp"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/icon_tacho"
-                                app:tint="#FF3B30" />
+                                android:src="@drawable/icon_eliminar_user"/>
+
+                            <ImageButton
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="5dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="2dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_actualizar"
+                                />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>

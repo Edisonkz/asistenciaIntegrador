@@ -20,9 +20,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".pantalla_administrador_mis_servicios"
+            android:name=".pantalla_guardia_inicio"
             android:exported="false" />
-        <!-- Pantalla de carga (launcher) -->
+
+        <activity
+            android:name=".pantalla_administrador_informes_de_asistencia"
+            android:exported="false" />
+
+        <activity
+            android:name=".pantalla_administrador_mis_servicios"
+            android:exported="false" /> <!-- Pantalla de carga (launcher) -->
         <activity
             android:name=".pantalla_carga"
             android:exported="true"
@@ -50,35 +57,26 @@
             android:name=".pantalla_de_informacion"
             android:exported="false" />
         <activity
-            android:name=".mis_servicios"
-            android:exported="false" />
-        <activity
-            android:name=".figure_12"
-            android:exported="false" />
-        <activity
-            android:name=".figure_11"
-            android:exported="false" />
-        <activity
-            android:name=".figure_10"
-            android:exported="false" />
-        <activity
-            android:name=".figure_9"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity2"
+            android:name=".pantalla_empleado_mis_servicios"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Comunicados"
+            android:name=".pantalla_empleado_mis_servicios_comunicados"
             android:exported="false" />
         <activity
             android:name=".PreguntasFrecuentes"
             android:exported="false" />
-        <activity android:name=".MainRegistrarColaborador" android:exported="false"/>
-        <activity android:name=".activity_pantalla_administrador_asignar_horarios" android:exported="false"/>
-        <activity android:name=".MainConfigurarAlertas" android:exported="false"/>
+        <activity
+            android:name=".MainRegistrarColaborador"
+            android:exported="false" />
+        <activity
+            android:name=".pantalla_administrador_asignar_horarios"
+            android:exported="false" />
+        <activity
+            android:name=".MainConfigurarAlertas"
+            android:exported="false" />
     </application>
 
 </manifest>

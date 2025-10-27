@@ -1,266 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".pantalla_login_verificar_correo">
-    
-    <!-- Fondo con gradiente -->
-    <FrameLayout
+
+    <LinearLayout
+        android:id="@+id/layout_contenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    <!-- Imagen ilustrativa -->
+    <ImageView
+        android:id="@+id/img_verificacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient_background">
+        android:layout_marginBottom="24dp"
+        android:contentDescription="Ilustración de verificación de correo"
+        android:src="@drawable/imagen_verificacion"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="900dp"
-            android:paddingTop="60dp"
-            android:paddingBottom="40dp">
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verificación del correo"
+        android:textColor="#0D1B2A"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
 
-        <!-- CardView para logo de verificación -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_logo_verificar"
-                android:layout_width="348dp"
-                android:layout_height="187dp"
-                android:layout_marginTop="40dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+    <!-- Texto descriptivo -->
+    <TextView
+        android:id="@+id/tv_descripcion"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Por favor revise su correo empresarial en unos minutos le enviaremos un enlace para recuperar su contraseña."
+        android:textAlignment="center"
+        android:textColor="#4B5563"
+        android:textSize="16sp"/>
 
-                <ImageView
-                    android:id="@+id/iv_logo_verificar"
-                    android:layout_width="290dp"
-                    android:layout_height="164dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="Logo de verificación de correo"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/logo_verificar_correo" />
+    <!-- Botón principal -->
+    <Button
+        android:id="@+id/btn_finalizar_login"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#0077B6"
+        android:text="Finalizar e Iniciar Sesión"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:cornerRadius="30dp"/>
 
-            </androidx.cardview.widget.CardView>
+    <!-- Texto de ayuda -->
+    <TextView
+        android:id="@+id/tv_ayuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="¿No recuerdas tu correo empresarial?\nRecibe ayuda en soporte@puntualia.com"
+        android:textAlignment="center"
+        android:textColor="#4B5563"
+        android:textSize="14sp"
+        android:autoLink="email"
+        android:linksClickable="true"
+        android:textColorLink="#0369A1"/>
 
-        <!-- Título principal mejorado -->
-        <TextView
-            android:id="@+id/tv_titulo_verificacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="sans-serif-black"
-            android:letterSpacing="0.02"
-            android:text="Verificación del Correo"
-            android:textColor="#1F2937"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_logo_verificar" />
+    </LinearLayout>
 
-        <!-- Línea decorativa superior -->
-        <View
-            android:id="@+id/line_top_verificar"
-            android:layout_width="100dp"
-            android:layout_height="3dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/decorative_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_verificacion" />
-
-        <!-- Contenedor del mensaje explicativo -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_mensaje_verificar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
-            app:cardBackgroundColor="#FAFBFC"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line_top_verificar">
-
-            <!-- Mensaje explicativo mejorado -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp">
-
-                <!-- Ícono de email enviado -->
-                <ImageView
-                    android:id="@+id/iv_email_sent"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="16dp"
-                    android:src="@drawable/ic_email"
-                    android:tint="#10B981" />
-
-                <!-- Texto principal -->
-                <TextView
-                    android:id="@+id/tv_mensaje_principal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:lineSpacingExtra="4dp"
-                    android:text="¡Correo enviado exitosamente!"
-                    android:textColor="#1F2937"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <!-- Texto explicativo -->
-                <TextView
-                    android:id="@+id/tv_mensaje_explicativo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:lineSpacingExtra="4dp"
-                    android:text="Por favor revise su correo empresarial en unos minutos. Le hemos enviado un enlace para recuperar su contraseña."
-                    android:textColor="#6B7280"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Botón moderno con CardView -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_btn_finalizar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            app:cardBackgroundColor="#10B981"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_mensaje_verificar">
-
-            <TextView
-                android:id="@+id/btn_finalizar_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="Finalizar e Iniciar Sesión"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
-
-        <!-- Línea decorativa inferior -->
-        <View
-            android:id="@+id/line_bottom_verificar"
-            android:layout_width="80dp"
-            android:layout_height="3dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/decorative_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_btn_finalizar" />
-
-        <!-- Elementos decorativos - círculos -->
-        <View
-            android:id="@+id/decoration_verificar_1"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="100dp"
-            android:alpha="0.5"
-            android:background="@drawable/decorative_circle_green"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:id="@+id/decoration_verificar_2"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="180dp"
-            android:alpha="0.4"
-            android:background="@drawable/decorative_circle_orange"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:id="@+id/decoration_verificar_3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginBottom="100dp"
-            android:alpha="0.3"
-            android:background="@drawable/decorative_circle_green"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-        <View
-            android:id="@+id/decoration_verificar_4"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="60dp"
-            android:alpha="0.4"
-            android:background="@drawable/decorative_circle_orange"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-        <!-- Texto de ayuda mejorado -->
-        <TextView
-            android:id="@+id/tv_ayuda_verificar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:lineSpacingExtra="2dp"
-            android:text="¿No recuerdas tu correo empresarial?"
-            android:textColor="#6B7280"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line_bottom_verificar" />
-
-        <!-- Link de soporte mejorado -->
-        <TextView
-            android:id="@+id/tv_link_soporte_verificar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="40dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="sans-serif-medium"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="8dp"
-            android:text="soporte@puntualia.com"
-            android:textColor="#10B981"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_ayuda_verificar"
-            app:layout_constraintBottom_toBottomOf="parent" />
-        
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        
-    </FrameLayout>
-    
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
