@@ -2,6 +2,7 @@ package com.edisonkz.asistenciaintegrador;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -111,8 +112,8 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
             public void onError(String error) {
                 runOnUiThread(() -> {
                     progressDialog.dismiss();
-                    Toast.makeText(pantalla_login_inicio_sesion.this, 
-                                 "Error: " + error, Toast.LENGTH_LONG).show();
+                    Toast.makeText(pantalla_login_inicio_sesion.this,
+                            "Error: " + error, Toast.LENGTH_LONG).show();
                     etPassword.setText("");
                     etPassword.requestFocus();
                 });
@@ -174,6 +175,19 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
     }
 
     private void handleLoginSuccess(Usuario usuario) {
+        // Guardar los datos del usuario en SharedPreferences
+        SharedPreferences prefs = getSharedPreferences("user_session", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("usuario_id", usuario.getId());
+        editor.putString("usuario_nombre", usuario.getNombre());
+        editor.putString("usuario_apellido", usuario.getApellido());
+        editor.putString("usuario_email", usuario.getEmail());
+        editor.putString("usuario_rol", usuario.getRol());
+        editor.putString("usuario_cargo", usuario.getCargo());
+        editor.putString("usuario_dni", usuario.getDni());
+        editor.putString("usuario_telefono", usuario.getTelefono());
+        editor.apply();
+
         Intent intent;
         String mensaje = "Bienvenido " + usuario.getNombre();
 
@@ -183,15 +197,15 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
             case "administrador":
                 intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_administrador_mis_servicios.class);
                 break;
-                
+
             case "empleado":
                 intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_empleado_mis_servicios.class);
                 break;
-                
+
             case "guardia":
                 intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_guardia_inicio_temporal.class);
                 break;
-                
+
             default:
                 intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_empleado_mis_servicios.class);
                 break;
