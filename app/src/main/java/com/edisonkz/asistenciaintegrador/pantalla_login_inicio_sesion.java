@@ -125,7 +125,7 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
     private void authenticateLocally(String dni, String password) {
         // Credenciales de prueba (DNI, contraseña NUMÉRICA)
         // Empleado:      dni "12345678", password "1234"
-        // Guardia:       dni "22222222", password "2222"
+        // Guardia:       dni "2222", password "2222"
         // Administrador: dni "87654321", password "9999"
 
         if (dni.equals("12345678") && password.equals("1234")) {
@@ -141,7 +141,7 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
                     "999000111"
             );
             handleLoginSuccess(usuario);
-        } else if (dni.equals("22222222") && password.equals("2222")) {
+        } else if (dni.equals("2222") && password.equals("2222")) {
             // Guardia de prueba
             Usuario usuario = new Usuario(
                     "local_guar_1",
@@ -203,7 +203,7 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
                 break;
 
             case "guardia":
-                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_guardia_inicio_temporal.class);
+                intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_guardia_inicio.class);
                 break;
 
             default:

@@ -20,13 +20,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".layout_footer_guardia"
+            android:exported="false" />
+        <activity
             android:name=".pantalla_guardia_inicio"
             android:exported="false" />
-
         <activity
             android:name=".pantalla_administrador_informes_de_asistencia"
             android:exported="false" />
-
         <activity
             android:name=".pantalla_administrador_mis_servicios"
             android:exported="false" /> <!-- Pantalla de carga (launcher) -->
@@ -76,6 +77,9 @@
             android:exported="false" />
         <activity
             android:name=".MainConfigurarAlertas"
+            android:exported="false" />
+        <activity
+            android:name=".pantalla_guardia_lista_de_asistencia"
             android:exported="false" />
     </application>
 
