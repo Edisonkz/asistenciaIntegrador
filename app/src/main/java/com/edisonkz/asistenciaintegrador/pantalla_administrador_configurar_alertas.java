@@ -22,7 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainConfigurarAlertas extends AppCompatActivity {
+public class pantalla_administrador_configurar_alertas extends AppCompatActivity {
 
     private ImageButton btnBack;
     private EditText etTituloAlerta;

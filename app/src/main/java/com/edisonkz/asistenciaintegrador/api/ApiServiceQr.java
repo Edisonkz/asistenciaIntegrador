@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
 
 public class ApiServiceQr {
 
-    private static final String BASE_URL = "http://192.168.0.101:8080/";//Ojo esto varia acada rato
+    private static final String BASE_URL = ApiConfig.getBaseUrl();
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public interface QrCallback {

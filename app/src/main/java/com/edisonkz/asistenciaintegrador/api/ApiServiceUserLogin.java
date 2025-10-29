@@ -5,6 +5,7 @@ import com.edisonkz.asistenciaintegrador.model.Usuario;
 import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
@@ -12,8 +13,7 @@ import java.util.concurrent.Executors;
 
 public class ApiServiceUserLogin {
 
-    // URL actualizada según el backend
-    private static final String BASE_URL = "http://192.168.0.101:8080/";
+    private static final String BASE_URL = ApiConfig.getBaseUrl();
 
     private ExecutorService executor = Executors.newFixedThreadPool(3);
 
@@ -27,22 +27,32 @@ public class ApiServiceUserLogin {
     public void login(String dni, String password, LoginCallback callback) {
         executor.execute(() -> {
             try {
-                // Usar el nuevo endpoint login-android
-                String urlString = BASE_URL + "api/usuarios/login-android?dni=" + dni + "&password=" + password;
+                // Usar el endpoint POST /api/usuarios/login con JSON en el body
+                String urlString = BASE_URL + "api/usuarios/login";
                 Log.d("ApiService", "Connecting to: " + urlString);
 
                 URL url = new URL(urlString);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                connection.setRequestMethod("GET");
-                connection.setConnectTimeout(15000); // Aumentar timeout
+                connection.setRequestMethod("POST");
+                connection.setConnectTimeout(15000);
                 connection.setReadTimeout(15000);
+                connection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+                connection.setDoOutput(true);
 
-                Log.d("ApiService", "Attempting connection...");
+                // Crear el JSON del body
+                JSONObject body = new JSONObject();
+                body.put("dni", dni);
+                body.put("password", password);
 
-                // Leer respuesta
+                // Enviar el body
+                OutputStream os = connection.getOutputStream();
+                os.write(body.toString().getBytes("UTF-8"));
+                os.close();
+
                 int responseCode = connection.getResponseCode();
-                Log.d("ApiService", "Response code: " + responseCode);
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                BufferedReader reader = new BufferedReader(new InputStreamReader(
+                        responseCode >= 400 ? connection.getErrorStream() : connection.getInputStream()
+                ));
 
                 StringBuilder response = new StringBuilder();
                 String line;
@@ -51,7 +61,6 @@ public class ApiServiceUserLogin {
                 }
                 reader.close();
 
-                // Procesar respuesta JSON
                 JSONObject jsonResponse = new JSONObject(response.toString());
                 boolean success = jsonResponse.optBoolean("success", false);
 
@@ -73,7 +82,8 @@ public class ApiServiceUserLogin {
 
     private Usuario parseUsuario(JSONObject usuarioJson) throws Exception {
         Usuario usuario = new Usuario();
-        usuario.setId(usuarioJson.optString("id"));
+        // Asegura que el id se obtenga correctamente, sea String o número
+        usuario.setId(usuarioJson.get("id"));
         usuario.setNombre(usuarioJson.optString("nombre"));
         usuario.setApellido(usuarioJson.optString("apellido"));
         usuario.setEmail(usuarioJson.optString("email"));

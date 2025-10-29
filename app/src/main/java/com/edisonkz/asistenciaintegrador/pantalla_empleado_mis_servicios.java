@@ -1,6 +1,7 @@
 package com.edisonkz.asistenciaintegrador;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,8 +25,13 @@ public class pantalla_empleado_mis_servicios extends AppCompatActivity {
         CardView cardPreguntas = findViewById(R.id.card_preguntas_frecuentes);
 
         cardHorarios.setOnClickListener(v -> {
-            Intent intent = new Intent(this, pantalla_empelado_mis_servicios_horario.class);
-            startActivity(intent);
+            try {
+                Toast.makeText(this, "Redirigiendo a Horarios...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, pantalla_empelado_mis_servicios_horario.class);
+                startActivity(intent);
+            } catch (Exception e) {
+                Toast.makeText(this, "Error al abrir Horarios: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            }
         });
 
         cardComunicados.setOnClickListener(v -> {
@@ -34,7 +40,8 @@ public class pantalla_empleado_mis_servicios extends AppCompatActivity {
         });
 
         cardPreguntas.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PreguntasFrecuentes.class);
+            // Cambia 'PreguntasFrecuentes.class' por la clase correcta
+            Intent intent = new Intent(this, pantalla_empleado_mis_servicios_preguntas.class);
             startActivity(intent);
         });
 

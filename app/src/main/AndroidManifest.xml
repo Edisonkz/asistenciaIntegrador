@@ -70,17 +70,33 @@
             android:name=".PreguntasFrecuentes"
             android:exported="false" />
         <activity
-            android:name=".MainRegistrarColaborador"
+            android:name=".pantalla_administrador_agregar_colaborador"
             android:exported="false" />
         <activity
             android:name=".pantalla_administrador_asignar_horarios"
             android:exported="false" />
         <activity
-            android:name=".MainConfigurarAlertas"
+            android:name=".pantalla_administrador_configurar_alertas"
             android:exported="false" />
         <activity
             android:name=".pantalla_guardia_lista_de_asistencia"
             android:exported="false" />
+        <activity
+            android:name=".pantalla_empelado_mis_servicios_horario"
+            android:exported="false" />
+        <activity
+            android:name=".pantalla_empleado_mis_servicios_preguntas"
+            android:exported="false" />
+        <activity
+            android:name=".pantalla_mi_perfil"
+            android:exported="false" />
+        <activity
+            android:name=".pantalla_qr_generado"
+            android:exported="false" />
+        <activity
+            android:name=".pantalla_administrador_lista_colaboradores"
+            android:exported="false" />
+
     </application>
 
 </manifest>

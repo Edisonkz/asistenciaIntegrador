@@ -19,7 +19,7 @@ public class pantalla_empelado_mis_servicios_horario extends AppCompatActivity {
         setContentView(R.layout.activity_pantalla_empelado_mis_servicios_horario);
 
         // Agregar botón de retroceso
-        findViewById(R.id.back_button).setOnClickListener(v -> onBackPressed());
+        findViewById(R.id.btnBack).setOnClickListener(v -> onBackPressed());
 
         // Inicializar botones
         btnSemana = findViewById(R.id.btn_semana);

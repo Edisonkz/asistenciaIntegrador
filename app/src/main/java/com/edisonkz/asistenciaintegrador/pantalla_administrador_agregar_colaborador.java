@@ -22,7 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainRegistrarColaborador extends AppCompatActivity {
+public class pantalla_administrador_agregar_colaborador extends AppCompatActivity {
 
     private ImageButton btnBack;
     private EditText etNombreColab;

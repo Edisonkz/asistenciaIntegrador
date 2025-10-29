@@ -3,6 +3,7 @@ package com.edisonkz.asistenciaintegrador;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,8 +30,14 @@ public class pantalla_guardia_inicio extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(pantalla_guardia_inicio.this, pantalla_guardia_lista_de_asistencia.class);
                 startActivity(intent);
-
             }
+        });
+
+        // Redirigir a perfil al hacer click en el icono de usuario en el footer
+        LinearLayout btnPerfil = findViewById(R.id.btn_perfil);
+        btnPerfil.setOnClickListener(v -> {
+            Intent intent = new Intent(this, pantalla_mi_perfil.class);
+            startActivity(intent);
         });
     }
 }

@@ -148,20 +148,20 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
                     "María",
                     "Gómez",
                     "maria.local@local.test",
-                    "guardia",
+                    "seguridad",
                     "Vigilante",
                     dni,
                     "999000222"
             );
             handleLoginSuccess(usuario);
-        } else if (dni.equals("87654321") && password.equals("9999")) {
+        } else if (dni.equals("3333") && password.equals("3333")) {
             // Administrador de prueba
             Usuario usuario = new Usuario(
                     "local_admin_1",
                     "Admin",
                     "Local",
                     "admin.local@local.test",
-                    "administrador",
+                    "admin", // <-- Cambia a "admin" para que coincida con el switch
                     "Administrador",
                     dni,
                     "999000333"
@@ -202,7 +202,7 @@ public class pantalla_login_inicio_sesion extends AppCompatActivity {
                 intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_empleado_mis_servicios.class);
                 break;
 
-            case "guardia":
+            case "seguridad":
                 intent = new Intent(pantalla_login_inicio_sesion.this, pantalla_guardia_inicio.class);
                 break;
 

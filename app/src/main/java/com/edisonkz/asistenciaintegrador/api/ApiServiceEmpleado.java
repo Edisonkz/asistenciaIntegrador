@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 
 public class ApiServiceEmpleado {
 
-    private static final String BASE_URL = "http://192.168.0.101:8080/";
+    private static final String BASE_URL = ApiConfig.getBaseUrl();
 
     private ExecutorService executor = Executors.newFixedThreadPool(3);
 
