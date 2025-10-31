@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 import android.widget.LinearLayout;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,6 +81,13 @@ public class pantalla_administrador_mis_servicios extends AppCompatActivity {
         LinearLayout btnPerfil = findViewById(R.id.btn_perfil);
         btnPerfil.setOnClickListener(v -> {
             Intent intent = new Intent(this, pantalla_mi_perfil.class);
+            startActivity(intent);
+        });
+
+        // Footer: redirigir a formulario de agregar colaborador al hacer click en el icono central
+        ImageView btnAnadirUsuario = findViewById(R.id.btn_añadir_usuario);
+        btnAnadirUsuario.setOnClickListener(v -> {
+            Intent intent = new Intent(this, pantalla_administrador_agregar_colaborador.class);
             startActivity(intent);
         });
 
