@@ -3,7 +3,7 @@ package com.edisonkz.asistenciaintegrador.api;
 public class ApiConfig {
 
     // Cambia aquí la IP cuando sea necesario
-    private static String BASE_IP = "192.168.0.100";
+    private static String BASE_IP = "10.254.54.59";
     private static final String PORT = "8080";
 
     public static String getBaseUrl() {

@@ -4,19 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/fondo_login_v2"
     android:fillViewport="true">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <!-- Fondo con gradiente sutil -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_background_celeste"
-            android:alpha="0.1" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -28,30 +17,19 @@
         android:paddingBottom="40dp"
         tools:context=".pantalla_login_inicio_sesion">
 
-        <!-- Logo con contenedor circular mejorado -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_logo"
+        <ImageView
+            android:id="@+id/iv_logo"
             android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_height="140dp"
             android:layout_marginTop="30dp"
-            app:cardBackgroundColor="#3B82F6"
-            app:cardCornerRadius="65dp"
-            app:cardElevation="8dp"
+            android:contentDescription="@string/logo_app"
+            android:src="@drawable/logo_puntualia_v2"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_logo"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_gravity="center"
-                android:contentDescription="Logo de la aplicación"
-                android:src="@drawable/logo_inicio" />
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- Título de bienvenida mejorado -->
+        <!-- Título de bienvenida mejorado
         <TextView
             android:id="@+id/tv_titulo"
             android:layout_width="wrap_content"
@@ -65,9 +43,9 @@
             android:letterSpacing="0.02"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_logo" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
-        <!-- Subtítulo mejorado -->
+
         <TextView
             android:id="@+id/tv_subtitulo"
             android:layout_width="wrap_content"
@@ -81,31 +59,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
 
-        <!-- Línea decorativa superior -->
-        <View
-            android:id="@+id/line_top"
-            android:layout_width="60dp"
-            android:layout_height="3dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/decorative_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_subtitulo" />
-
+-->
         <!-- Contenedor del formulario con elevación -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_form_container"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="24dp"
-            app:cardBackgroundColor="#FAFBFC"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
+            android:layout_marginTop="30dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line_top">
+            app:layout_constraintTop_toBottomOf="@+id/iv_logo">
 
         <!-- Formulario de login integrado -->
         <LinearLayout
@@ -124,7 +89,7 @@
                 android:alpha="0.9"
                 android:fontFamily="sans-serif-medium"
                 android:text="Número de documento"
-                android:textColor="#2C3E50"
+                android:textColor="#08243C"
                 android:textSize="14sp" />
 
             <!-- Campo de documento -->
@@ -134,13 +99,13 @@
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="#F8F9FA"
                 app:boxBackgroundMode="filled"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusBottomEnd="0dp"
+                app:boxCornerRadiusBottomStart="0dp"
                 app:boxCornerRadiusTopEnd="15dp"
                 app:boxCornerRadiusTopStart="15dp"
-                app:boxStrokeColor="#4A90E2"
+                app:boxStrokeColor="#08243C"
                 app:startIconDrawable="@drawable/ic_person"
-                app:startIconTint="#4A90E2">
+                app:startIconTint="#0369A1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_documento"
@@ -148,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
                     android:inputType="number"
-                    android:textColor="#2C3E50"
+                    android:textColor="#08243C"
                     android:textSize="16sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -173,15 +138,15 @@
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="#F8F9FA"
                 app:boxBackgroundMode="filled"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusBottomEnd="0dp"
+                app:boxCornerRadiusBottomStart="0dp"
                 app:boxCornerRadiusTopEnd="15dp"
                 app:boxCornerRadiusTopStart="15dp"
-                app:boxStrokeColor="#4A90E2"
+                app:boxStrokeColor="#08243C"
                 app:endIconMode="password_toggle"
-                app:endIconTint="#4A90E2"
+                app:endIconTint="#0369A1"
                 app:startIconDrawable="@drawable/ic_lock"
-                app:startIconTint="#4A90E2">
+                app:startIconTint="#0369A1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"
@@ -189,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
                     android:inputType="numberPassword"
-                    android:textColor="#2C3E50"
+                    android:textColor="#08243C"
                     android:textSize="16sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -213,9 +178,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Modo prueba (autenticación local)"
-                android:textColor="#374151"
+                android:text="Modo prueba (autenticación local) "
+                android:textColor="#08243C"
                 android:checked="false" />
+
+
+
+            <!-- Botón de iniciar sesión -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardBackgroundColor="#FF9500"
+                app:cardCornerRadius="25dp">
+
+                <TextView
+                    android:id="@+id/btn_iniciar_sesion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0369A1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:letterSpacing="0.03"
+                    android:padding="18dp"
+                    android:text="🔐 INICIAR SESIÓN"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
 
             <!-- Link para olvidé mi contraseña -->
             <TextView
@@ -230,55 +224,14 @@
                 android:fontFamily="sans-serif-medium"
                 android:padding="8dp"
                 android:text="¿Olvidaste tu contraseña?"
-                android:textColor="#4A90E2"
-                android:textSize="14sp" />
-
-            <!-- Botón de iniciar sesión -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_btn_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                app:cardBackgroundColor="#FF9500"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="12dp">
-
-                <TextView
-                    android:id="@+id/btn_iniciar_sesion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="sans-serif-black"
-                    android:gravity="center"
-                    android:letterSpacing="0.03"
-                    android:padding="18dp"
-                    android:text="🔐 INICIAR SESIÓN"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
+                android:textColor="#0369A1"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <!-- Link para olvidé mi contraseña -->
-
-        <!-- Elementos decorativos -->
-        <View
-            android:id="@+id/decoration_1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="100dp"
-            android:alpha="0.2"
-            android:background="@drawable/icon_estrella"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+        <!-- Link para olvidé mi contraseña
         <View
             android:id="@+id/decoration_2"
             android:layout_width="50dp"
@@ -289,54 +242,7 @@
             android:background="@drawable/decorative_circle_orange"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Línea decorativa inferior -->
-        <View
-            android:id="@+id/line_bottom"
-            android:layout_width="40dp"
-            android:layout_height="3dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/decorative_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_form_container" />
-
-        <!-- Elementos decorativos adicionales -->
-        <View
-            android:id="@+id/decoration_3"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="180dp"
-            android:alpha="0.4"
-            android:background="@drawable/decorative_circle_green"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:id="@+id/decoration_4"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginTop="350dp"
-            android:alpha="0.5"
-            android:background="@drawable/icon_estrella2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:id="@+id/decoration_5"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginBottom="100dp"
-            android:alpha="0.3"
-            android:background="@drawable/decorative_circle_green"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
+-->
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </FrameLayout>
 
 </ScrollView>
